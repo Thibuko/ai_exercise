@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Results</title>
+</head>
+<body>
+    <h1>Quiz Results</h1>
+    <p>Your score is {{ score }}/{{ total_questions }}</p>
+    <h2>Questions and Answers:</h2>
+    <ul>
+        {% for question, user_answer, correct_answer in question_responses %}
+            <li>
+                <strong>Question:</strong> {{ question }}<br>
+                <strong>Your Answer:</strong> {{ user_answer }}<br>
+                <strong>Correct Answer:</strong> {{ correct_answer }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Take Another Quiz</a>
+</body>
+</html>

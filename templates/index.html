@@ -2,16 +2,23 @@
 <html>
 <head>
     <title>Multiple Choice Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Multiple Choice Quiz</h1>
-    <form method="POST" action="/submit">
-        <h2>{{ question.question }}</h2>
-        {% for option in question.options %}
-            <input type="radio" name="user_answer" value="{{ option }}"> {{ option }}<br>
-        {% endfor %}
-        <br>
-        <input type="submit" value="Next Question">
-    </form>
+    <div class="container">
+        <form method="POST" action="/submit">
+            <h2>{{ question.question }}</h2>
+            <ul>
+                {% for option in question.options %}
+                    <li>
+                        <input type="radio" name="user_answer" value="{{ option }}"> {{ option }}<br>
+                    </li>
+                {% endfor %}
+            </ul>
+            <br>
+            <input type="submit" value="Next Question">
+        </form>
+    </div>
 </body>
 </html>

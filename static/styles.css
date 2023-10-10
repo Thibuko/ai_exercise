@@ -2,14 +2,14 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f7f7f7; /* Light gray background */
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
 h1 {
-    background-color: #007bff;
+    background-color: #4caf50; /* Green */
     color: #fff;
     padding: 20px;
 }
@@ -37,12 +37,15 @@ h1 {
 }
 
 .correct-answer {
-    background-color: #81c784;
+    color: #8be690; /* Light green for text in correct answers */
+    background-color: white; /* White background for correct answers */
 }
 
 .incorrect-answer {
-    background-color: #e57373;
+    color: #ec716f; /* Red for text in incorrect answers */
+    background-color: white; /* White background for incorrect answers */
 }
+
 
 .chart-container {
     margin-top: 20px;

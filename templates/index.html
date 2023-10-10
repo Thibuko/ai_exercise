@@ -12,7 +12,7 @@
             <div class="question">
                 <h2>{{ question.question }}</h2>
                 {% for option in question.options %}
-                    <button type="submit" class="btn btn-primary btn-block" name="user_answer" value="{{ option }}">{{ option }}</button>
+                    <button type="submit" class="btn btn-outline-success btn-block" name="user_answer" value="{{ option }}">{{ option }}</button>
                 {% endfor %}
             </div>
         </form>

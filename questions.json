@@ -1,34 +1,194 @@
 {
-    "questions": [
-      {
-        "question": "What is the primary purpose of large language models like ChatGPT?",
-        "options": [
-          "Translating languages",
-          "Playing video games",
-          "Generating human-like text",
-          "Calculating complex math problems"
-        ],
-        "correct_answer": "Generating human-like text"
-      },
-      {
-        "question": "Which company developed the GPT (Generative Pre-trained Transformer) architecture?",
-        "options": [
-          "Microsoft",
-          "Google",
-          "Facebook",
-          "OpenAI"
-        ],
-        "correct_answer": "OpenAI"
-      },
-      {
-        "question": "What is the architecture used in models like ChatGPT?",
-        "options": [
-          "LSTM",
-          "GRU",
-          "BERT",
-          "Transformer"
-        ],
-        "correct_answer": "Transformer"
-      }
-    ]
-  }
+  "questions": [
+    {
+      "question": "What is the primary purpose of large language models like ChatGPT?",
+      "options": [
+        "Translating languages",
+        "Playing video games",
+        "Generating human-like text",
+        "Calculating complex math problems"
+      ],
+      "correct_answer": "Generating human-like text"
+    },
+    {
+      "question": "Which company developed the GPT (Generative Pre-trained Transformer) architecture?",
+      "options": [
+        "Microsoft",
+        "Google",
+        "Facebook",
+        "OpenAI"
+      ],
+      "correct_answer": "OpenAI"
+    },
+    {
+      "question": "What is the architecture used in models like ChatGPT?",
+      "options": [
+        "LSTM",
+        "GRU",
+        "BERT",
+        "Transformer"
+      ],
+      "correct_answer": "Transformer"
+    },
+    {
+      "question": "Which of the following is not a common application of large language models?",
+      "options": [
+        "Text generation",
+        "Image recognition",
+        "Chatbots",
+        "Language translation"
+      ],
+      "correct_answer": "Image recognition"
+    },
+    {
+      "question": "What does the 'G' in GPT stand for?",
+      "options": [
+        "Global",
+        "Generative",
+        "Gigantic",
+        "General"
+      ],
+      "correct_answer": "Generative"
+    },
+    {
+      "question": "Which programming language is often used to fine-tune large language models like ChatGPT?",
+      "options": [
+        "Java",
+        "Python",
+        "C++",
+        "Ruby"
+      ],
+      "correct_answer": "Python"
+    },
+    {
+      "question": "What is the training data source for large language models?",
+      "options": [
+        "Wikipedia articles",
+        "Cookbook recipes",
+        "Cat videos",
+        "Weather reports"
+      ],
+      "correct_answer": "Wikipedia articles"
+    },
+    {
+      "question": "Which of the following is a potential ethical concern related to large language models?",
+      "options": [
+        "Increasing productivity",
+        "Bias in AI outputs",
+        "Reducing greenhouse gas emissions",
+        "Improving healthcare outcomes"
+      ],
+      "correct_answer": "Bias in AI outputs"
+    },
+    {
+      "question": "What is the common metric used to evaluate the performance of large language models in natural language understanding tasks?",
+      "options": [
+        "MIPS (Million Instructions Per Second)",
+        "FLOPS (Floating Point Operations Per Second)",
+        "BLEU (Bilingual Evaluation Understudy)",
+        "GPA (Grade Point Average)"
+      ],
+      "correct_answer": "BLEU (Bilingual Evaluation Understudy)"
+    },
+    {
+      "question": "Which of the following is an example of a fine-tuned variant of GPT-3?",
+      "options": [
+        "GPT-1",
+        "GPT-2",
+        "GPT-4",
+        "GPT-5"
+      ],
+      "correct_answer": "GPT-2"
+    },
+    {
+      "question": "What is the typical size of the parameter space in a large language model like ChatGPT?",
+      "options": [
+        "10,000 parameters",
+        "1 million parameters",
+        "1 billion parameters",
+        "1 trillion parameters"
+      ],
+      "correct_answer": "1 billion parameters"
+    },
+    {
+      "question": "Which of the following is a limitation of large language models?",
+      "options": [
+        "High computational cost",
+        "Low scalability",
+        "Limited language support",
+        "Inability to generate creative content"
+      ],
+      "correct_answer": "High computational cost"
+    },
+    {
+      "question": "What is the purpose of fine-tuning a pre-trained language model?",
+      "options": [
+        "To increase its size",
+        "To improve its accuracy on specific tasks",
+        "To convert it into a chatbot",
+        "To reduce its complexity"
+      ],
+      "correct_answer": "To improve its accuracy on specific tasks"
+    },
+    {
+      "question": "Which of the following is an example of a task that can be performed using large language models like ChatGPT?",
+      "options": [
+        "Solving complex math problems",
+        "Flying a drone",
+        "Generating poetry",
+        "Baking a cake"
+      ],
+      "correct_answer": "Generating poetry"
+    },
+    {
+      "question": "What is the significance of the 'pre-trained' phase in training large language models?",
+      "options": [
+        "It comes after fine-tuning",
+        "It involves training from scratch",
+        "It involves using a pre-existing model",
+        "It is not a part of the training process"
+      ],
+      "correct_answer": "It involves using a pre-existing model"
+    },
+    {
+      "question": "Which of the following is a potential benefit of large language models in education?",
+      "options": [
+        "Replacing human teachers",
+        "Providing personalized tutoring",
+        "Teaching martial arts",
+        "Cooking lessons"
+      ],
+      "correct_answer": "Providing personalized tutoring"
+    },
+    {
+      "question": "What is the role of attention mechanisms in the Transformer architecture used by models like ChatGPT?",
+      "options": [
+        "They improve gaming performance",
+        "They allow the model to focus on specific parts of input sequences",
+        "They prevent overfitting",
+        "They speed up model training"
+      ],
+      "correct_answer": "They allow the model to focus on specific parts of input sequences"
+    },
+    {
+      "question": "What is the main difference between ChatGPT and a traditional rule-based chatbot?",
+      "options": [
+        "ChatGPT uses rule-based algorithms",
+        "ChatGPT relies on pre-defined rules",
+        "ChatGPT uses machine learning to generate responses",
+        "ChatGPT cannot understand natural language"
+      ],
+      "correct_answer": "ChatGPT uses machine learning to generate responses"
+    },
+    {
+      "question": "Which of the following is an example of a fine-tuning dataset for a language model?",
+      "options": [
+        "Movie scripts",
+        "Restaurant menus",
+        "Sudoku puzzles",
+        "Dinosaur fossils"
+      ],
+      "correct_answer": "Movie scripts"
+    }
+  ]
+}

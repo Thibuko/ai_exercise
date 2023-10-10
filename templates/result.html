@@ -8,11 +8,11 @@
     <p>Your score is {{ score }}/{{ total_questions }}</p>
     <h2>Questions and Answers:</h2>
     <ul>
-        {% for question, user_answer, correct_answer in question_responses %}
+        {% for response in question_responses %}
             <li>
-                <strong>Question:</strong> {{ question }}<br>
-                <strong>Your Answer:</strong> {{ user_answer }}<br>
-                <strong>Correct Answer:</strong> {{ correct_answer }}
+                <strong>Question:</strong> {{ response.question }}<br>
+                <strong>Your Answer:</strong> {{ response.user_answer }}<br>
+                <strong>Correct Answer:</strong> {{ response.correct_answer }}
             </li>
         {% endfor %}
     </ul>

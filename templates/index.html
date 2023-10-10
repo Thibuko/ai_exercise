@@ -6,14 +6,12 @@
 <body>
     <h1>Multiple Choice Quiz</h1>
     <form method="POST" action="/submit">
-        {% for question in questions %}
-            <h2>{{ question.question }}</h2>
-            {% for option in question.options %}
-                <input type="radio" name="{{ question.question }}" value="{{ option }}"> {{ option }}<br>
-            {% endfor %}
+        <h2>{{ question.question }}</h2>
+        {% for option in question.options %}
+            <input type="radio" name="user_answer" value="{{ option }}"> {{ option }}<br>
         {% endfor %}
         <br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Next Question">
     </form>
 </body>
 </html>

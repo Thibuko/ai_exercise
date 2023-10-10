@@ -3,22 +3,43 @@
 <head>
     <title>Quiz Results</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Quiz Results</h1>
     <div class="container">
-        <p>Your score is {{ score }}/{{ total_questions }}</p>
-        <h2>Questions and Answers:</h2>
+        <h1 class="text-center">Quiz Results</h1>
+        <p class="text-center">Your score is {{ score }}/{{ total_questions }}</p>
+        <h2 class="question">Questions and Answers:</h2>
         <ul>
             {% for response in question_responses %}
-                <li class="{% if response.user_answer == response.correct_answer %}correct-answer{% else %}incorrect-answer{% endif %}">
+                <li>
                     <strong>Question:</strong> {{ response.question }}<br>
-                    <strong>Your Answer:</strong> {{ response.user_answer }}<br>
-                    <strong>Correct Answer:</strong> {{ response.correct_answer }}
+                    <strong>Your Answer:</strong>
+                    <span class="{% if response.user_answer == response.correct_answer %}correct-answer{% else %}incorrect-answer{% endif %}">
+                        {{ response.user_answer }}
+                    </span><br>
+                    {% if response.user_answer != response.correct_answer %}
+                        <strong>Correct Answer:</strong> {{ response.correct_answer }}
+                    {% endif %}
                 </li>
             {% endfor %}
         </ul>
-        <a href="/">Take Another Quiz</a>
+        <a href="/" class="btn btn-primary btn-block">Take Another Quiz</a>
     </div>
+    <div class="chart-container">
+        <canvas id="chart" width="200" height="200"></canvas>
+    </div>
+
+    <!-- Pass correct and incorrect counts to JavaScript -->
+    <script>
+        const correctCount = {{ correct_count|tojson|safe }};
+        const incorrectCount = {{ incorrect_count|tojson|safe }};
+    </script>
+
+    <!-- Include the Chart.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+    <!-- Include your custom chart.js file -->
+    <script src="{{ url_for('static', filename='chart.js') }}"></script>
 </body>
 </html>

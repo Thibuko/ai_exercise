@@ -51,8 +51,12 @@ def submit():
 
 @app.route('/result')
 def result():
+    correct_count = sum(1 for response in session['question_responses'] if response['user_answer'] == response['correct_answer'])
+    incorrect_count = len(session['question_responses']) - correct_count
     return render_template('result.html', score=session['score'], total_questions=len(questions),
-                           question_responses=session['question_responses'])
+                           question_responses=session['question_responses'],
+                           correct_count=correct_count, incorrect_count=incorrect_count)
+
 
 if __name__ == '__main__':
     app.run()

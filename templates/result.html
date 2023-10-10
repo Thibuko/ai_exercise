@@ -9,36 +9,39 @@
     <div class="container">
         <h1 class="text-center">Quiz Results</h1>
         <p class="text-center">Your score is {{ score }}/{{ total_questions }}</p>
-        <h2 class="question">Questions and Answers:</h2>
-        <ul>
-            {% for response in question_responses %}
-                <li>
-                    <strong>Question:</strong> {{ response.question }}<br>
-                    <strong>Your Answer:</strong>
-                    <span class="{% if response.user_answer == response.correct_answer %}correct-answer{% else %}incorrect-answer{% endif %}">
-                        {{ response.user_answer }}
-                    </span><br>
-                    {% if response.user_answer != response.correct_answer %}
-                        <strong>Correct Answer:</strong> {{ response.correct_answer }}
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="question">Questions and Answers:</h2>
+                <ul>
+                    {% for response in question_responses %}
+                        <li>
+                            <strong>Question:</strong> {{ response.question }}<br>
+                            <strong>Your Answer:</strong>
+                            <span class="{% if response.user_answer == response.correct_answer %}correct-answer{% else %}incorrect-answer{% endif %}">
+                                {{ response.user_answer }}
+                            </span><br>
+                            {% if response.user_answer != response.correct_answer %}
+                                <strong>Correct Answer:</strong> {{ response.correct_answer }}
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <canvas id="chart" width="200" height="200"></canvas>
+                </div>
+            </div>
+        </div>
         <a href="/" class="btn btn-primary btn-block">Take Another Quiz</a>
     </div>
-    <div class="chart-container">
-        <canvas id="chart" width="200" height="200"></canvas>
-    </div>
-
     <!-- Pass correct and incorrect counts to JavaScript -->
     <script>
         const correctCount = {{ correct_count|tojson|safe }};
         const incorrectCount = {{ incorrect_count|tojson|safe }};
     </script>
-
     <!-- Include the Chart.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-
     <!-- Include your custom chart.js file -->
     <script src="{{ url_for('static', filename='chart.js') }}"></script>
 </body>

@@ -9,15 +9,13 @@
     <div class="container">
         <form method="POST" action="/submit">
             <h2>{{ question.question }}</h2>
-            <ul>
+            <ul class="answer-options">
                 {% for option in question.options %}
                     <li>
-                        <input type="radio" name="user_answer" value="{{ option }}"> {{ option }}<br>
+                        <button type="submit" name="user_answer" value="{{ option }}">{{ option }}</button>
                     </li>
                 {% endfor %}
             </ul>
-            <br>
-            <input type="submit" value="Next Question">
         </form>
     </div>
 </body>

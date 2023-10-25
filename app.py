@@ -1,10 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+"""Displays a web quizz with result page"""
 import json
+
+from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
 
 # Load questions from the JSON file
-with open('questions.json', 'r') as json_file:
+with open('questions.json', 'r', encoding='UTF-8') as json_file:
     data = json.load(json_file)
     questions = data["questions"]
 
@@ -12,8 +14,10 @@ with open('questions.json', 'r') as json_file:
 app.secret_key = 'your_secret_key_here'
 app.config['SESSION_TYPE'] = 'filesystem'
 
+
 @app.route('/')
 def index():
+    """Display first question"""
     # Initialize or reset session variables
     session['question_index'] = 0
     session['score'] = 0
@@ -21,8 +25,10 @@ def index():
 
     return render_template('index.html', question=questions[0])
 
+
 @app.route('/submit', methods=['POST'])
 def submit():
+    """Sumbit answer and displays next question"""
     # Retrieve the user's answer for the current question
     user_answer = request.form.get('user_answer')
 
@@ -46,12 +52,14 @@ def submit():
 
     if session['question_index'] < len(questions):
         return render_template('index.html', question=questions[session['question_index']])
-    else:
-        return redirect(url_for('result'))
+    return redirect(url_for('result'))
+
 
 @app.route('/result')
 def result():
-    correct_count = sum(1 for response in session['question_responses'] if response['user_answer'] == response['correct_answer'])
+    """Displays the result"""
+    correct_count = sum(1 for response in session['question_responses']
+                        if response['user_answer'] == response['correct_answer'])
     incorrect_count = len(session['question_responses']) - correct_count
     return render_template('result.html', score=session['score'], total_questions=len(questions),
                            question_responses=session['question_responses'],
